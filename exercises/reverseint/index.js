@@ -13,11 +13,9 @@ function reverseInt(n) {
 
     let rev = parseInt(tempStr.split("").reduce((res, char) => char + res, ""));
 
-    if (n < 0) rev = -rev;
-
-    return rev;
+    return rev * Math.sign(n);
 }
 
-console.log(reverseInt(300));
+console.log(reverseInt(3001));
 
 module.exports = reverseInt;
