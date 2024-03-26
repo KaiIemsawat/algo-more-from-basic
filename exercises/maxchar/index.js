@@ -6,6 +6,7 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
+    // Create an object with distinct key
     let chars = {};
     for (let char of str) {
         if (!chars[char]) {
@@ -15,6 +16,7 @@ function maxChar(str) {
         }
     }
 
+    // Loop trough the object to get max value
     let max = 0;
     let res = "";
     for (let key in chars) {
