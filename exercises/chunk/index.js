@@ -28,20 +28,28 @@ function chunk(array, size) {
 
     /* SOLUTION 2 */
     // if (array.length <= size) return [array];
+    // const arr = [...array]; // create a new array so that the original array wouldn't be mutated by splice()
 
-    // while (array.length > 0) {
-    //     resultArr.push(array.splice(0, size));
+    // while (arr.length > 0) {
+    //     resultArr.push(arr.splice(0, size));
     // }
 
     /* SOLUTION 3 */
-    for (let element of array) {
-        const last = resultArr[resultArr.length - 1]; // for the first iteration, last will be undefined
+    // for (let element of array) {
+    //     const last = resultArr[resultArr.length - 1]; // for the first iteration, last will be undefined
 
-        if (!last || last.length === size) {
-            resultArr.push([element]); // push the new sub array along with the first element for that sub array
-        } else {
-            last.push(element);
-        }
+    //     if (!last || last.length === size) {
+    //         resultArr.push([element]); // push the new sub array along with the first element for that sub array
+    //     } else {
+    //         last.push(element);
+    //     }
+    // }
+
+    /* SOLUTION 4 */
+    let i = 0;
+    while (i < array.length) {
+        resultArr.push(array.slice(i, i + size));
+        i += size;
     }
 
     return resultArr;
