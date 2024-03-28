@@ -9,17 +9,27 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    // replace any unneccessary character with ""
-    const replaceA = stringA.replace(/[^\w]/g, "").toLowerCase();
-    const replaceB = stringB.replace(/[^\w]/g, "").toLowerCase();
+    /* SOLUTION 1 */
+    // replace any unneccessary character with "", /[^\w]/g refer to all non-alphabets
+    // const replaceA = stringA.replace(/[^\w]/g, "").toLowerCase();
+    // const replaceB = stringB.replace(/[^\w]/g, "").toLowerCase();
 
-    // Split string to array of each character
-    // Sort characters
-    // Join back
     return (
-        replaceA.split("").sort().join("") ===
-        replaceB.split("").sort().join("")
+        /* SOLUTION 1 */
+        // Split string to array of each character
+        // Sort characters
+        // // Join back
+        // replaceA.split("").sort().join("") ===
+        // replaceB.split("").sort().join("")
+
+        /* SOLUTION 2 */
+        cleanString(stringA) === cleanString(stringB)
     );
+}
+
+/* SOLUTION 2 */
+function cleanString(str) {
+    return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
 
 module.exports = anagrams;
