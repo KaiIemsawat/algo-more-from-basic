@@ -18,7 +18,7 @@ function anagrams(stringA, stringB) {
         /* SOLUTION 1 */
         // Split string to array of each character
         // Sort characters
-        // // Join back
+        // Join back
         // replaceA.split("").sort().join("") ===
         // replaceB.split("").sort().join("")
 
