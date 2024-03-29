@@ -18,17 +18,23 @@
 //       '####'
 
 function steps(n) {
-    let space = "";
-    let buildStep = "";
+    /* SOLUTION 1 */
+    // let space = "";
+    // let buildStep = "";
 
-    for (let i = 0; i < n; i++) {
-        space += " ";
-    }
+    // for (let i = 0; i < n; i++) {
+    //     space += " ";
+    // }
 
-    for (let i = 0; i < n; i++) {
-        buildStep += "#";
-        space = space.slice(1);
-        console.log(buildStep + space);
+    // for (let i = 0; i < n; i++) {
+    //     buildStep += "#";
+    //     space = space.slice(1);
+    //     console.log(buildStep + space);
+    // }
+
+    /* SOLUTION 2 */
+    for (let i = 1; i <= n; i++) {
+        console.log("#".repeat(i) + " ".repeat(n - i));
     }
 }
 
