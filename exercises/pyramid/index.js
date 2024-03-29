@@ -15,23 +15,31 @@
 //       '#####'
 
 function pyramid(n) {
-    for (let row = 0; row < n; row++) {
-        let returnStr = "";
-        for (let col = n - 1 - row; col > 0; col--) {
-            returnStr += " ";
-        }
+    /* SOLUTION 1 */
+    // for (let row = 0; row < n; row++) {
+    //     let returnStr = "";
+    //     for (let col = n - 1 - row; col > 0; col--) {
+    //         returnStr += " ";
+    //     }
 
-        for (let block = 1; block <= (row + 1) * 2 - 1; block++) {
-            returnStr += "#";
-        }
-        for (let col = n - 1 - row; col > 0; col--) {
-            returnStr += " ";
-        }
+    //     for (let block = 1; block <= (row + 1) * 2 - 1; block++) {
+    //         returnStr += "#";
+    //     }
+    //     for (let col = n - 1 - row; col > 0; col--) {
+    //         returnStr += " ";
+    //     }
 
-        console.log(returnStr);
+    //     console.log(returnStr);
+    // }
+
+    /* SOLUTION 2 */
+    for (let i = 1; i <= n; i++) {
+        console.log(
+            " ".repeat(n - i) + "#".repeat(i * 2 - 1) + " ".repeat(n - i)
+        );
     }
 }
 
-pyramid(3);
+pyramid(4);
 
 module.exports = pyramid;
