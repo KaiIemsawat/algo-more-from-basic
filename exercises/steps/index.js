@@ -22,10 +22,12 @@ function steps(n) {
     // let space = "";
     // let buildStep = "";
 
+    // Create a string of white spaces
     // for (let i = 0; i < n; i++) {
     //     space += " ";
     // }
 
+    // Each iteration increase a '#' and decrease white space
     // for (let i = 0; i < n; i++) {
     //     buildStep += "#";
     //     space = space.slice(1);
@@ -33,8 +35,23 @@ function steps(n) {
     // }
 
     /* SOLUTION 2 */
-    for (let i = 1; i <= n; i++) {
-        console.log("#".repeat(i) + " ".repeat(n - i));
+    // for (let i = 1; i <= n; i++) {
+    //     console.log("#".repeat(i) + " ".repeat(n - i));
+    // }
+
+    /* SOLUTION 3 */
+    // Work as row and column
+    // Outer loop for row.
+    for (let row = 0; row < n; row++) {
+        let stair = "";
+        for (let column = 0; column < n; column++) {
+            if (column <= row) {
+                stair += "#";
+            } else {
+                stair += " ";
+            }
+        }
+        console.log(stair);
     }
 }
 
