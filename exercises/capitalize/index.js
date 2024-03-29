@@ -40,6 +40,7 @@ function capitalize(str) {
 
     /* SOLUTION 4 */
     // The small letter \b word boundary indicates that a pattern is bounded by a non-word character
+    // \w, matches any alphanumeric character from the basic Latin alphabet, including the underscore. Equivalent to [A-Za-z0-9_]. For example, /\w/ matches "a" in "apple", "5" in "$5.28", and "3" in "3D".
     return str.replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
