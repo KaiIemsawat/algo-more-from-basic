@@ -9,22 +9,20 @@
 
 function vowels(str) {
     /* SOLUTION 1 */
-    // let vowels = ["a", "e", "i", "o", "u"];
-    // let count = 0;
+    let vowelsArr = ["a", "e", "i", "o", "u"];
+    let count = 0;
 
-    // let charArr = str.toLowerCase().split("");
+    // let charArr = str.toLowerCase().split(""); // No split("") needed
 
-    // for (let char of charArr) {
-    //     for (let v of vowels) {
-    //         if (char === v) {
-    //             count++;
-    //         }
-    //     }
-    // }
-    // return count;
+    for (let char of str.toLowerCase()) {
+        if (vowelsArr.includes(char)) {
+            count++;
+        }
+    }
+    return count;
 
     /* SOLUTION 2 REGEX */
-    return !str.match(/[AEIOUaeiou]/g) ? 0 : str.match(/[aeiouAEIOU]/g).length;
+    // return !str.match(/[AEIOUaeiou]/g) ? 0 : str.match(/[aeiouAEIOU]/g).length;
 }
 
 console.log(vowels("aeioOU IAu123"));
