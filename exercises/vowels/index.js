@@ -8,21 +8,25 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let vowels = ["a", "e", "i", "o", "u"];
-    let count = 0;
+    /* SOLUTION 1 */
+    // let vowels = ["a", "e", "i", "o", "u"];
+    // let count = 0;
 
-    let charArr = str.toLowerCase().split("");
+    // let charArr = str.toLowerCase().split("");
 
-    for (char of charArr) {
-        for (v of vowels) {
-            if (char === v) {
-                count++;
-            }
-        }
-    }
-    return count;
+    // for (let char of charArr) {
+    //     for (let v of vowels) {
+    //         if (char === v) {
+    //             count++;
+    //         }
+    //     }
+    // }
+    // return count;
+
+    /* SOLUTION 2 REGEX */
+    return !str.match(/[AEIOUaeiou]/g) ? 0 : str.match(/[aeiouAEIOU]/g).length;
 }
 
-console.log(vowels("aeioOUIAu123"));
+console.log(vowels("aeioOU IAu123"));
 
 module.exports = vowels;
