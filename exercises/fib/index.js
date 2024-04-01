@@ -20,12 +20,32 @@
 // }
 
 /* SOLUTION 2 */
-function fib(n) {
+// function fib(n) {
+//     if (n < 2) return n;
+
+//     return fib(n - 1) + fib(n - 2);
+// }
+
+/* Solution 3 */
+function memoize(fn) {
+    const cache = {};
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    };
+}
+function originalRecursionFib(n) {
     if (n < 2) return n;
 
-    return fib(n - 1) + fib(n - 2);
+    return originalRecursionFib(n - 1) + fib(n - 2);
 }
+const fib = memoize(originalRecursionFib);
 
-console.log(fib(4));
+console.log(fib(6));
 
 module.exports = fib;
