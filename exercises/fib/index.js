@@ -42,7 +42,7 @@ function memoize(fn) {
 function originalRecursionFib(n) {
     if (n < 2) return n;
 
-    return originalRecursionFib(n - 1) + fib(n - 2);
+    return fib(n - 1) + fib(n - 2); // Note to call the memoization version of fib()
 }
 const fib = memoize(originalRecursionFib);
 
