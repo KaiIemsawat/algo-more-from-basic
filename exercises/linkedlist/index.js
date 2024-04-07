@@ -86,7 +86,7 @@ class LinkedList {
             // There are some existing nodes in chain
             last.next = new Node(data);
         } else {
-            // The chain is empty
+            // The chain is empty`
             this.head = new Node(data);
         }
         return last;
@@ -106,6 +106,23 @@ class LinkedList {
         }
 
         return null;
+    }
+
+    removeAt(index) {
+        if (!this.head) {
+            return;
+        }
+
+        if (index === 0) {
+            this.head = this.head.next;
+            return;
+        }
+
+        const previous = this.getAt(index - 1);
+        if (!previous || !previous.next) {
+            return;
+        }
+        previous.next = previous.next.next;
     }
 }
 
